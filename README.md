@@ -39,4 +39,4 @@ Builds the app bundle in production enviroment, ready do be deployed.
 
 ## Stack
 
-- #### [`Styled Components`](https://www.styled-components.com/
+- #### [`Styled Components`](https://www.styled-components.com/)
