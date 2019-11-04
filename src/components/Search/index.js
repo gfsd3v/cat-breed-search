@@ -57,15 +57,16 @@ const ResultsWrapper = styled.div`
 const LoadMoreButton = styled.button`
   padding: 10px 15px;
   font-size: 1rem;
+  background: white;
   color: ${DefaultTheme.colors.blackText};
   font-family: ${DefaultTheme.font.primary};
   font-size: 0.8em;
   font-weight: 500;
   border: 1px solid ${DefaultTheme.colors.lightGray};
-  width: 15vw;
+  width: 190px;
   border-radius: 2px;
   &:hover {
-    background-color: ${DefaultTheme.colors.lightPrimary};
+    background: ${DefaultTheme.colors.lightPrimary};
     color: ${DefaultTheme.colors.text};
   }
 `;

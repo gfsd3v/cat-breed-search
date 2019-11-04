@@ -18,7 +18,7 @@ const Template = styled.div`
       "sidebar"
       "content"
       "content";
-    grid-template-rows: 80px 80px 1fr 70px;
+    grid-template-rows: 80px 80px auto 70px;
     grid-template-columns: 1fr;
   }
 `;
