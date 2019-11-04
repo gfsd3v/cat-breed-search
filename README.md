@@ -4,9 +4,8 @@
 I did a fully responsive web app where the user can search for cat breads, [`click here`](https://www.gatsbyjs.org/) to see the app in production enviroment.
 
 Most of the logic lies within the following files:
-
 [src/components/Search](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/components/Search/index.js) - Responsable for rendering the data provide from the catService class.
-[src/services/catService.js](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/services/catService.js)- Responsable for getting thecatapi data.
+[src/services/catService.js](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/services/catService.js) - Responsable for getting thecatapi data.
 
 ## Scripts
 
