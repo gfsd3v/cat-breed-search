@@ -71,35 +71,40 @@ const LoadMoreButton = styled.button`
 `;
 
 const Search = () => {
+  const [requestError, setRequestError] = React.useState(false);
   const searchResults = useSelector(state => state.searchReducer.searchResults);
   const resultsImage = useSelector(state => state.searchReducer.imagesResults);
   const dispatch = useDispatch();
   let textInput = React.createRef();
 
   const searchBreed = async breed => {
-    const cats = await CatService.searchCatBreed(textInput.current.value);
+    try {
+      const cats = await CatService.searchCatBreed(textInput.current.value);
 
-    if (cats.length) {
-      const catImages = await CatService.getCatsImage([cats[0]]);
+      if (cats.length) {
+        const catImages = await CatService.getCatsImage([cats[0]]);
 
-      dispatch({
-        type: "SET_FIRST_RESULT",
-        searchResults: cats,
-        imagesResults: catImages
-      });
-    } else {
-      dispatch({
-        type: "RESET_RESULTS"
-      });
+        dispatch({
+          type: "SET_FIRST_RESULT",
+          searchResults: cats,
+          imagesResults: catImages
+        });
+      } else {
+        dispatch({
+          type: "RESET_RESULTS"
+        });
+      }
+    } catch (e) {
+      setRequestError(true);
     }
   };
 
   const statusMessage = () => {
     return (
       <StatusWrapper>
-        {searchResults.length
+        {!requestError
           ? `${searchResults.length} results found`
-          : `0 results found`}
+          : `error on request, please try again in a few minutes`}
       </StatusWrapper>
     );
   };
@@ -132,12 +137,16 @@ const Search = () => {
   };
 
   const loadMore = async () => {
-    const catImages = await CatService.getCatsImage(searchResults);
-    dispatch({
-      type: "SET_FULL_RESULTS",
-      searchResults,
-      imagesResults: catImages
-    });
+    try {
+      const catImages = await CatService.getCatsImage(searchResults);
+      dispatch({
+        type: "SET_FULL_RESULTS",
+        searchResults,
+        imagesResults: catImages
+      });
+    } catch (error) {
+      setRequestError(true);
+    }
   };
 
   return (
