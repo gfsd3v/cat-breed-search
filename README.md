@@ -1,7 +1,7 @@
 
 ## Hostgator coding challenge
 
-I did a fully responsive web app where the user can search for cat breads, [`click here`](https://www.hostgatos-redux.netlify.com/) to see the app in production enviroment.
+I did a fully responsive web app where the user can search for cat breads, [`click here`](https://hostgatos-redux.netlify.com/) to see the app in production enviroment.
 
 ## Core files
 
