@@ -1,4 +1,3 @@
-//import { store } from "../../store";
 import Api from "services/apiService";
 
 class CatService {
