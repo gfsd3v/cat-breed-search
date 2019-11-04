@@ -6,8 +6,9 @@ I did a fully responsive web app where the user can search for cat breads, [`cli
 ## Core files
 
 Most of the logic lies within the following files:
-[src/components/Search](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/components/Search/index.js) - Responsable for rendering the data provide from the catService class.
-[src/services/catService.js](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/services/catService.js) - Responsable for getting thecatapi data.
+
+- **[src/components/Search](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/components/Search/index.js):** Responsable for rendering the data provide from the catService class.
+- **[src/services/catService.js](https://github.com/gfsd3v/hostgatos-redux/blob/master/src/services/catService.js):** Responsable for getting thecatapi data.
 
 ## Extras tried to accomplish
 
