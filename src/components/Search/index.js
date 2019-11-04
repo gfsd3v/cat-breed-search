@@ -3,6 +3,7 @@ import styled from "styled-components";
 import DefaultTheme from "themes/defaultTheme";
 import CatInfo from "components/CatInfo";
 import CatService from "services/catService";
+import { useDispatch, useSelector } from "react-redux";
 
 const Wrapper = styled.div`
   display: flex;
@@ -70,8 +71,9 @@ const LoadMoreButton = styled.button`
 `;
 
 const Search = () => {
-  const [searchResults, setSearchResult] = React.useState([]);
-  const [resultsImage, setResultsImage] = React.useState([]);
+  const searchResults = useSelector(state => state.searchReducer.searchResults);
+  const resultsImage = useSelector(state => state.searchReducer.imagesResults);
+  const dispatch = useDispatch();
   let textInput = React.createRef();
 
   const searchBreed = async breed => {
@@ -80,11 +82,15 @@ const Search = () => {
     if (cats.length) {
       const catImages = await CatService.getCatsImage([cats[0]]);
 
-      setResultsImage(catImages);
-      setSearchResult(cats);
+      dispatch({
+        type: "SET_FIRST_RESULT",
+        searchResults: cats,
+        imagesResults: catImages
+      });
     } else {
-      setSearchResult([]);
-      setResultsImage([]);
+      dispatch({
+        type: "RESET_RESULTS"
+      });
     }
   };
 
@@ -127,7 +133,11 @@ const Search = () => {
 
   const loadMore = async () => {
     const catImages = await CatService.getCatsImage(searchResults);
-    setResultsImage(catImages);
+    dispatch({
+      type: "SET_FULL_RESULTS",
+      searchResults,
+      imagesResults: catImages
+    });
   };
 
   return (

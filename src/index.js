@@ -1,10 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "normalize.css";
-import "typeface-roboto";
-import HomePage from "pages/HomePage";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<HomePage />, document.getElementById("root"));
+// Style
+import "normalize.css";
+import "typeface-roboto";
+
+//Page
+import HomePage from "pages/HomePage";
+
+// Redux
+import { Provider } from "react-redux";
+import Store from "state";
+
+ReactDOM.render(
+  <Provider store={Store}>
+    <HomePage />
+  </Provider>,
+  document.getElementById("root")
+);
 
 serviceWorker.register();
