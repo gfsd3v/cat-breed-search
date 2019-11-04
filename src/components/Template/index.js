@@ -9,7 +9,7 @@ const Template = styled.div`
   grid-template-rows: 55px auto 70px;
   grid-template-columns: 300px 1fr 15%;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0;
 
   @media all and (max-width: 800px) {
