@@ -3,7 +3,6 @@ import styled from "styled-components";
 import DefaultTheme from "themes/defaultTheme";
 import CatInfo from "components/CatInfo";
 import CatService from "services/catService";
-import { useDispatch, useSelector } from "react-redux";
 
 const Wrapper = styled.div`
   display: flex;
@@ -72,10 +71,10 @@ const LoadMoreButton = styled.button`
 `;
 
 const Search = () => {
+  const [searchResults, setSearchResult] = React.useState([]);
+  const [resultsImage, setResultsImage] = React.useState([]);
   const [requestError, setRequestError] = React.useState(false);
-  const searchResults = useSelector(state => state.searchReducer.searchResults);
-  const resultsImage = useSelector(state => state.searchReducer.imagesResults);
-  const dispatch = useDispatch();
+
   let textInput = React.createRef();
 
   const searchBreed = async breed => {
@@ -85,15 +84,11 @@ const Search = () => {
       if (cats.length) {
         const catImages = await CatService.getCatsImage([cats[0]]);
 
-        dispatch({
-          type: "SET_FIRST_RESULT",
-          searchResults: cats,
-          imagesResults: catImages
-        });
+        setResultsImage(catImages);
+        setSearchResult(cats);
       } else {
-        dispatch({
-          type: "RESET_RESULTS"
-        });
+        setSearchResult([]);
+        setResultsImage([]);
       }
     } catch (e) {
       setRequestError(true);
@@ -140,12 +135,8 @@ const Search = () => {
   const loadMore = async () => {
     try {
       const catImages = await CatService.getCatsImage(searchResults);
-      dispatch({
-        type: "SET_FULL_RESULTS",
-        searchResults,
-        imagesResults: catImages
-      });
-    } catch (error) {
+      setResultsImage(catImages);
+    } catch (e) {
       setRequestError(true);
     }
   };
