@@ -1,7 +1,12 @@
 
-## Hostgator coding challenge
+## Cat breed search
 
-I did a fully responsive web app where the user can search for cat breads, [`click here`](https://hostgatos-redux.netlify.com/) to see the app in production enviroment.
+For this challenge I did a fully responsive web app where the user can search for cat breads using thecatapi.com and pagination, [`click here`](https://hostgatos-redux.netlify.com/) to see the app in production enviroment.
+
+## Challenge layout requirement
+
+![image](https://user-images.githubusercontent.com/36668882/68335567-76309080-00bb-11ea-81db-201e60400b8b.png)
+
 
 ## Core files
 
@@ -32,9 +37,6 @@ Runs the developer server in [http://localhost:3000](http://localhost:3000).
 Builds the app bundle in production enviroment, ready do be deployed.
 
 ## Improvement ideas
-
-- **Tests:** Didn't had the time to add the tests needed, the project could use some
-  basic Jest tests.
 - **Security:** The [.env](https://github.com/gfsd3v/hostgatos-redux/blob/master/.env) file should be listed in the [.gitignore](https://github.com/gfsd3v/hostgatos-redux/blob/master/.gitignore), but I didn't do it because the .env is a mandatory file for running the app in dev mode, if it was a production app the api key would be in the [.env](https://github.com/gfsd3v/hostgatos-redux/blob/master/.env) file.
 
 ## Stack
