@@ -18,7 +18,7 @@ Most of the data logic lies within the following files:
 ## Extras tried to accomplish
 
 - **Mobile-friendly/Responsive:** The app is fully responsive for any device.
-- **Newest features of ECMAScript:** I tried to use the most modern considered to be the best practices, using only functional components, hooks and the ES6 features that makes the code more concise and readable.
+- **Newest features of ECMAScript:** I used modern JS practices, using only functional components, hooks and the ES6 features that makes the code more concise and readable.
   
 ## Scripts
 
