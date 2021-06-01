@@ -1,7 +1,7 @@
 
 ## Cat breed search
 
-For this challenge I did a fully responsive web app where the user can search for cat breeds using thecatapi.com and pagination, [`click here`](https://hostgatos-redux.netlify.com/) to see the app in production enviroment.
+For this challenge I did a fully responsive web app where the user can search for cat breeds using thecatapi.com and pagination, [`click here`](https://hostgatos.netlify.com/) to see the app in production enviroment.
 
 ## Challenge layout requirement
 
